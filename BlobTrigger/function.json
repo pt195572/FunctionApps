@@ -1,0 +1,20 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "blobTrigger",
+      "direction": "in",
+      "name": "myblob",
+      "path": "archive/inbound/aradtcc/dialog/2023/{name}",
+      "connection": "proddlsintradolake001_STORAGE"
+    },
+    {
+      "type": "serviceBus",
+      "direction": "out",
+      "connection": "prodservicebusfuncapps_SERVICEBUS",
+      "name": "message",
+      "queueName": "transaction-queue"
+    }
+  ],
+  "disabled": false
+}
